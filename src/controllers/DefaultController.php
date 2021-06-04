@@ -19,8 +19,14 @@ class DefaultController extends AppController {
         $this->render('mainSite');
     }
 
-    public function projects()
+    public function errorPage()
     {
-        $this->render('projects');
+        $this->render('errorPage');
     }
+
+    public function editAccountPage()
+    {
+        $this->render('editAccountPage');
+    }
+
 }

@@ -1,3 +1,49 @@
 body{
-    /*background: black;*/
+    margin: 0px;
+}
+
+/* navigation bar */
+.nav_bar{
+    background: #7a7f87;
+    margin: 0px;
+    padding: 0px;
+    height: 50px;
+}
+
+.nav_bar .user_information_nav_bar{
+    margin: 0px;
+    padding: 5px;
+    float: right;
+}
+
+.nav_bar .user_information_nav_bar .name{
+    color: #000;
+    margin: 0px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 5px;
+    float: left;
+    text-align: center;
+}
+
+.nav_bar .user_information_nav_bar img{
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nav_bar .logout{
+    font-size: 28px;
+    padding: 9.5px;
+    color: #000;
+    float: right;
+}
+
+.nav_bar .logout:visited{
+    color: #000;
+}
+
+.nav_bar .user_information_nav_bar .name:visited{
+    color: #000;
 }

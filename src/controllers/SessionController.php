@@ -24,6 +24,7 @@ class SessionController
         $stmt->execute();
         $respond = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
         setcookie('user', json_encode(['email' => $coockie_email,'name' => $respond['name'], 'surname'=>$respond['surname'], 'code' => $randomString]), $expired, '/');
 
         $respond = $this->getSessionByEmail($coockie_email);
@@ -42,7 +43,7 @@ class SessionController
     private function setSession(string $email, string $code, $respond){
         $query = 'UPDATE public.session SET code=:code WHERE email=:email';
         if(!$respond){
-            $query = 'INSERT INTO public.session (email, code, created_at) VALUES (:email, :code, NOW())';
+            $query = 'INSERT INTO public.session (email, code) VALUES (:email, :code)';
         }
 
         $stmt = $this->database->connect()->prepare($query);

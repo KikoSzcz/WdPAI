@@ -17,6 +17,8 @@ class Router {
 
     public static function run ($url) {
         $sessionControl = new SessionController();
+
+        //Sprawdzenie czy użytkownik jest zalogowany, jeśli nie to przeniesienie go na stronę logowania
         if(!$sessionControl->checkCookieWithDatabase()){
             $url = "login";
         }elseif ($url === 'login'){
@@ -25,7 +27,8 @@ class Router {
 
         $action = explode("/", $url)[0];
         if (!array_key_exists($action, self::$routes)) {
-            die("Wrong url!");
+            $url = "errorPage";
+            $action = explode("/", $url)[0];
         }
 
         $controller = self::$routes[$action];

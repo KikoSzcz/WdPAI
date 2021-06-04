@@ -38,7 +38,8 @@ class SecurityController extends AppController {
         header("Location: {$url}/");
     }
 
-    public function logout(){
+    public function logout()
+    {
         $sessionControl = new SessionController();
         $sessionControl->deleteCoockieInDatabase();
         $url = "http://$_SERVER[HTTP_HOST]";

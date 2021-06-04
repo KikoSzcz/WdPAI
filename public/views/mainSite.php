@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/awesome/font-awesome.min.css">
     <title>Main site</title>
 </head>
 <body>
 <div class="base-container">
+    <?php require_once __DIR__.'/../../public/viewsModules/navBar.php'; ?>
     <div class="website-tittle">Main site</div>
-    <p>Witaj <?= json_decode($_COOKIE['user'], true)['name']; ?> <?= json_decode($_COOKIE['user'], true)['surname']; ?></p>
-    <p>Zdjecie: <?= json_decode($_COOKIE['user'], true)['image']; ?></p>
-    <a href="/projects">Projects</a>
-    <form class="logout" action="logout" method="POST">
-        <button type="submit">Logout</button>
-    </form>
+
+    <a href="/editAccountPage">Edit account</a>
+    <a href="/usersList">Users list</a>
+
+    <div class="Your_recived_message">
+        <p>Your recived message</p>
+    </div>
+    <div class="Your_send_message">
+        <p>Your send message</p>
+    </div>
+
+    <a href="/newMessage">Create new message</a>
+
 </div>
 </body>
 </html>
