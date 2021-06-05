@@ -11,6 +11,11 @@ class SessionController
         $this->database = new Database();
     }
 
+    public function editCookie($email, $name, $surname, $code){
+        $expired = time() + (86400 * 30);
+        setcookie('user', json_encode(['email' => $email,'name' => $name, 'surname'=>$surname, 'code' => $code]), $expired, '/');
+    }
+
 
     public function setCookie(string $coockie_email){
         $expired = time() + (86400 * 30);

@@ -12,4 +12,10 @@ require_once __DIR__.'/../../src/models/userImage.php';
             <img src='<?php userImage::getUserImage() ?>'/>
         </div>
     </a>
+    <div class="navigation_menu">
+        <a href="/usersList">Users list</a>
+        <a href="/creatNewMessage">New message</a>
+        <a href="/recivedMessage">Recived message</a>
+        <a href="/sendMessage">Send message</a>
+    </div>
 </div>
