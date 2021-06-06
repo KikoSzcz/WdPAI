@@ -29,4 +29,9 @@ class DefaultController extends AppController {
         $this->render('editAccountPage');
     }
 
+    public function usersList()
+    {
+        $this->render('usersList');
+    }
+
 }

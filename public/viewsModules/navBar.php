@@ -13,9 +13,10 @@ require_once __DIR__.'/../../src/models/userImage.php';
         </div>
     </a>
     <div class="navigation_menu">
+        <a href="/mainSite">Main site</a>
         <a href="/usersList">Users list</a>
         <a href="/creatNewMessage">New message</a>
         <a href="/recivedMessage">Recived message</a>
-        <a href="/sendMessage">Send message</a>
+        <a href="/sendMessage">Sended message</a>
     </div>
 </div>

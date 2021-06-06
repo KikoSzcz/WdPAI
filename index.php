@@ -10,6 +10,7 @@ Router::get('', 'DefaultController');
 Router::get('mainSite', 'DefaultController');
 Router::get('errorPage', 'DefaultController');
 Router::get('editAccountPage', 'DefaultController');
+Router::get('usersList', 'DefaultController');
 
 Router::get('logout', 'SecurityController');
 Router::post('login', 'SecurityController');

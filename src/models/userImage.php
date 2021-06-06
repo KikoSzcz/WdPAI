@@ -14,6 +14,13 @@ class userImage
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
         $respond = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        //Jeśli użytkownik nie ma zdjęcia to dodajemy podstawowe zdjecie
+        if(!strpos($respond['image'], 'image'))
+        {
+            $respond['image'] = userImage::getImageFromDatabase('defaultUserPhoto');
+        }
+
         return $respond['image'];
     }
 
@@ -22,12 +29,6 @@ class userImage
         $email = json_decode($_COOKIE['user'], true)['email'];
         $image = userImage::getImageFromDatabase($email);
 
-
-        //Jeśli użytkownik nie ma zdjęcia to dodajemy podstawowe zdjecie
-        if(!strpos($image, 'image'))
-        {
-            $image = userImage::getImageFromDatabase('defaultUserPhoto');
-        }
         print_r($image);
     }
 }
