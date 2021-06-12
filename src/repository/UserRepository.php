@@ -19,11 +19,20 @@ class UserRepository extends Repository
             return null;
         }
 
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM user_details WHERE email = :email
+        ');
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+
         return new User(
             $user['email'],
             $user['password'],
-            $user['name'],
-            $user['surname']
+            $userDetails['name'],
+            $userDetails['surname']
         );
     }
 }

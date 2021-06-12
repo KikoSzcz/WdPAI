@@ -7,7 +7,7 @@ class saveUserInformationInDatabase
 
         $database = new Database();
         $stmt = $database->connect()->prepare('
-        UPDATE public.users SET name=:name, surname=:surname WHERE email=:email
+        UPDATE public.user_details SET name=:name, surname=:surname WHERE email=:email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);

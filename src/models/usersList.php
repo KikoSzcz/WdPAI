@@ -65,7 +65,7 @@ class usersList
     }
 
     public function getUsersInfo(){
-        $stmt = $this->database->connect()->prepare('SELECT * FROM public.users');
+        $stmt = $this->database->connect()->prepare('SELECT * FROM public.user_details');
         $stmt->execute();
         $respond = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $respond;

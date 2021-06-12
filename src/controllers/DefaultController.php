@@ -34,4 +34,8 @@ class DefaultController extends AppController {
         $this->render('usersList');
     }
 
+    public function creatNewMessage()
+    {
+        $this->render('creatNewMessage');
+    }
 }

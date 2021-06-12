@@ -23,7 +23,7 @@ class SessionController
             ceil(250/strlen($x)) )),1,250);
 
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM public.users WHERE email = :email
+        SELECT * FROM public.user_details WHERE email = :email
         ');
         $stmt->bindParam(':email', $coockie_email, PDO::PARAM_STR);
         $stmt->execute();
