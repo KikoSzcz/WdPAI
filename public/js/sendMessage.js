@@ -1,6 +1,14 @@
 async function sendMessage(){
 
     attachments = await attachmentsToBase64();
+    attachmentsName = document.querySelector('input[name=attachments]').files;
+    attachmentsNumber = attachmentsName.length;
+    tempAttach = '';
+    for(i = 0; i < attachmentsNumber; i++)
+    {
+        tempAttach += attachmentsName[i].name+'<!!>';
+    }
+    attachmentsName = tempAttach;
     await new Promise(r => setTimeout(r, 2000));
     emailsList = document.querySelector('input[name=emailsList]').value;
     messageText = document.querySelector('textarea[name=messageText]').value;
@@ -10,6 +18,7 @@ async function sendMessage(){
         emailsList: emailsList,
         messageText: messageText,
         attachments: attachments,
+        attachmentsName: attachmentsName,
         title: title
     },
     function (data)

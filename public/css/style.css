@@ -3,11 +3,19 @@ body{
 }
 
 /* navigation bar */
+.container{
+    margin-top: 67px;
+}
+
 .nav_bar{
     background: #7a7f87;
     margin: 0px;
     padding: 0px;
     height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 999;
 }
 
 .nav_bar .user_information_nav_bar{
@@ -93,4 +101,93 @@ body{
 
 .users-list .user p{
     text-align: center;
+}
+
+.recivedMessageSmall
+{
+    border: 1px solid;
+}
+
+.sendedMessageSmall
+{
+    border: 1px solid;
+}
+
+/*Main site*/
+.Your_recived_message .recivedMessageContainer .leftSideRecivedMessage{
+    width: 25%;
+    float: left;
+    height: 608px;
+    overflow-y: auto;
+    margin-left: 10px;
+    border: solid 1px;
+}
+
+.Your_recived_message .recivedMessageContainer .rightSideRecivedMessage{
+    height: 608px;
+    position: absolute;
+    width: 73%;
+    left: 25.4%;
+    margin-left: 10px;
+    overflow-y: auto;
+    border: solid 1px;
+}
+
+.Your_recived_message .recivedMessageContainer .rightSideRecivedMessage textarea{
+    margin: 0px;
+    width: 73%;
+    height: 380px;
+    overflow-y: auto;
+    resize: none;
+}
+
+.Your_recived_message .recivedMessageContainer .rightSideRecivedMessage textarea:disabled{
+    color: #000000;
+    cursor: default;
+    background-color: #ffffff;
+}
+
+.Your_recived_message .recivedMessageContainer .rightSideRecivedMessage  .files{
+    margin: 0px;
+}
+
+
+
+
+.Your_send_message .sendedMessageContainer .leftSideSendedMessage{
+    width: 25%;
+    float: left;
+    height: 608px;
+    overflow-y: auto;
+    margin-bottom: 50px;
+    margin-left: 10px;
+    border: solid 1px;
+}
+
+.Your_send_message .sendedMessageContainer .rightSideSendedMessage{
+    height: 608px;
+    position: absolute;
+    width: 73%;
+    left: 25.4%;
+    margin-left: 10px;
+    overflow-y: auto;
+    border: solid 1px;
+}
+
+.Your_send_message .sendedMessageContainer .rightSideSendedMessage textarea{
+    margin: 0px;
+    width: 73%;
+    height: 380px;
+    overflow-y: auto;
+    resize: none;
+}
+
+.Your_send_message .sendedMessageContainer .rightSideSendedMessage textarea:disabled{
+    color: #000000;
+    cursor: default;
+    background-color: #ffffff;
+}
+
+.Your_send_message .sendedMessageContainer .rightSideSendedMessage  .files{
+    margin: 0px;
 }
