@@ -59,7 +59,7 @@ class readSendedMessage
         $stmt->execute();
         $respond = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if(!$respond)
+        if($respond['SendID'] === null)
         {
             $this->id = null;
         }

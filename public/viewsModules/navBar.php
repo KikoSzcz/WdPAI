@@ -17,6 +17,6 @@ require_once __DIR__.'/../../src/models/userImage.php';
         <a href="/usersList">Users list</a>
         <a href="/creatNewMessage">New message</a>
         <a href="/recivedMessage">Recived message</a>
-        <a href="/sendMessage">Sended message</a>
+        <a href="/sendedMessage">Sended message</a>
     </div>
 </div>

@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/awesome/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="public/js/showMessage.js"></script>
+    <script src="public/js/deleteMessage.js"></script>
+    <script src="public/js/answerMessage.js"></script>
     <title>Main site</title>
 </head>
 <body>

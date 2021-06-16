@@ -28,7 +28,7 @@ function displayMessageRecived(id){
 
     contentDiv = document.querySelector('.recivedMessageContainer .rightSideRecivedMessage');
 
-    contentDiv.innerHTML = '<p class="title">Title: '+title+'</p><p class="toWho">Recipients: '+toWho+'</p><p class="fromWho">Sender: '+fromWho+'</p><textarea class="message" disabled>'+message+'</textarea><div class="attachment"><p class="files">Attachments:</p>'+attach+'</div>';
+    contentDiv.innerHTML = '<input type="button" value="Answer" onclick="answerMessage()"/><input type="button" value="Delete" onclick="deleteMessage('+id+',\'RecivedID\')"/><p class="title">Title:</p><p class="titleMessage">'+title+'</p><p class="toWho">Recipients:</p><p class="toWhoMessage">'+toWho+'</p><p class="fromWho">Sender:</p><p class="fromWhoMessage">'+fromWho+'</p><textarea class="message" disabled>'+message+'</textarea><div class="attachment"><p class="files">Attachments:</p><p class="filesMessage">'+attach+'</p></div>';
 }
 
 function displayMessageSended(id){
@@ -61,5 +61,5 @@ function displayMessageSended(id){
 
     contentDiv = document.querySelector('.sendedMessageContainer .rightSideSendedMessage');
 
-    contentDiv.innerHTML = '<p class="title">Title: '+title+'</p><p class="toWho">Recipients: '+toWho+'</p><p class="fromWho">Sender: '+fromWho+'</p><textarea class="message" disabled>'+message+'</textarea><div class="attachment"><p class="files">Attachments:</p>'+attach+'</div>';
+    contentDiv.innerHTML = '<input type="button" value="Delete" onclick="deleteMessage('+id+',\'RecivedID\')"/><p class="title">Title:</p><p class="titleMessage">'+title+'</p><p class="toWho">Recipients:</p><p class="toWhoMessage">'+toWho+'</p><p class="fromWho">Sender:</p><p class="fromWhoMessage">'+fromWho+'</p><textarea class="message" disabled>'+message+'</textarea><div class="attachment"><p class="files">Attachments:</p><p class="filesMessage">'+attach+'</p></div>';
 }

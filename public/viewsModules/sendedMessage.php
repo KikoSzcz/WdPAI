@@ -13,7 +13,7 @@ if($numberOfMessage===0)
 else
 {
     echo '<div class="sendedMessageContainer"><div class="leftSideSendedMessage">';
-    for($i = $numberOfMessage-1; $i > 0; $i--)
+    for($i = $numberOfMessage-1; $i >= 0; $i--)
     {
         echo '<div class="sendedMessageSmall" id="r'.$i.'" onclick="displayMessageSended('.$i.')">';
         echo '<p class="fromWho">'.$readSendedInformation->fromWho[$i].'</p>';

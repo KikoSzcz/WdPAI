@@ -5,7 +5,6 @@ $readInformation = new readRecivedMessage();
 $readInformation->readInfromation();
 
 $numberOfMessage = sizeof($readInformation->titles);
-
 if($numberOfMessage===0)
 {
 echo '<p class="noMessages">You dont have any messages!</p>';
@@ -13,7 +12,7 @@ echo '<p class="noMessages">You dont have any messages!</p>';
 else
 {
     echo '<div class="recivedMessageContainer"><div class="leftSideRecivedMessage">';
-    for($i = $numberOfMessage-1; $i > 0; $i--)
+    for($i = $numberOfMessage-1; $i >= 0; $i--)
     {
         echo '<div class="recivedMessageSmall" id="r'.$i.'" onclick="displayMessageRecived('.$i.')">';
         echo '<p class="fromWho">'.$readInformation->fromWho[$i].'</p>';

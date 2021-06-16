@@ -38,4 +38,14 @@ class DefaultController extends AppController {
     {
         $this->render('creatNewMessage');
     }
+
+    public function recivedMessage()
+    {
+        $this->render('recivedMessage');
+    }
+
+    public function sendedMessage()
+    {
+        $this->render('sendedMessage');
+    }
 }

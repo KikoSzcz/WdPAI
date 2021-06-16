@@ -12,6 +12,8 @@ Router::get('errorPage', 'DefaultController');
 Router::get('editAccountPage', 'DefaultController');
 Router::get('usersList', 'DefaultController');
 Router::get('creatNewMessage', 'DefaultController');
+Router::get('recivedMessage', 'DefaultController');
+Router::get('sendedMessage', 'DefaultController');
 
 Router::get('logout', 'SecurityController');
 Router::post('login', 'SecurityController');

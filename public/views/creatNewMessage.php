@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/awesome/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="public/js/sendMessage.js"></script>
-
+    <script src="public/js/readState.js"></script>
 
     <title>Edit account page</title>
 </head>
@@ -19,6 +19,7 @@
     <textarea name="messageText"></textarea>
     <input name="attachments" type="file" multiple>
     <button type="submit" onclick="sendMessage()">Send message</button>
+    <script>readStateAndPut();</script>
 
     <a href='<?= $_SERVER['HTTP_REFERER']; ?>'>Back</a>
 </div>
