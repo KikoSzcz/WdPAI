@@ -19,6 +19,7 @@
     <textarea name="messageText"></textarea>
     <input name="attachments" type="file" multiple>
     <button type="submit" onclick="sendMessage()">Send message</button>
+    <p class="message"></p>
     <script>readStateAndPut();</script>
 
     <a href='<?= $_SERVER['HTTP_REFERER']; ?>'>Back</a>

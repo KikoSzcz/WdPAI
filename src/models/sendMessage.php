@@ -29,7 +29,6 @@ class sendMessage
         $newMessageId = $this->addMessageToDatabase();
         $this->addMessageToSenderTable($newMessageId);
         $this->addMessageToRecivedTable($newMessageId);
-        echo 'Message send';
     }
 
     function addMessageToRecivedTable(string $id){

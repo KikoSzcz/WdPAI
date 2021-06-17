@@ -14,6 +14,15 @@
             <input name="password" type="password" placeholder="password">
             <button type="submit">Login</button>
         </form>
+        <div class="messages">
+            <?php
+            if(isset($messages)){
+                foreach($messages as $message) {
+                    echo $message;
+                }
+            }
+            ?>
+        </div>
     </div>
 </div>
 </body>

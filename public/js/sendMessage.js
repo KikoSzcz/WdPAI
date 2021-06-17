@@ -23,7 +23,11 @@ async function sendMessage(){
     },
     function (data)
     {
-        console.log(data);
+        document.querySelector('input[name=emailsList]').value = '';
+        document.querySelector('textarea[name=messageText]').value = '';
+        document.querySelector('input[name=title]').value = '';
+        document.querySelector('input[name=attachments]').value = '';
+        document.querySelector('.message').innerHTML = 'Message send!';
     });
 }
 
