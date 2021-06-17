@@ -1,8 +1,8 @@
 function displayMessageRecived(id){
     recivedMessageSmall = document.querySelectorAll('.recivedMessageSmall');
-    for(i = 0; i <= recivedMessageSmall.length - 1 ; i++)
+    for(i = 0, j = recivedMessageSmall.length - 1; i <= recivedMessageSmall.length - 1 ; i++, j--)
     {
-        if(i==id)
+        if(j==id)
         {
             recivedMessageSmall[i].style = 'font-weight: bold';
         }
@@ -33,9 +33,9 @@ function displayMessageRecived(id){
 
 function displayMessageSended(id){
     sendedMessageSmall = document.querySelectorAll('.sendedMessageSmall');
-    for(i = 0; i <= sendedMessageSmall.length - 1 ; i++)
+    for(i = 0, j = sendedMessageSmall.length - 1; i <= sendedMessageSmall.length - 1 ; i++, j--)
     {
-        if(i==id)
+        if(j==id)
         {
             sendedMessageSmall[i].style = 'font-weight: bold';
         }

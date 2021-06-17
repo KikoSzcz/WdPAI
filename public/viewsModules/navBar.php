@@ -1,5 +1,14 @@
 <?php
 require_once __DIR__.'/../../src/models/userImage.php';
+require_once __DIR__.'/../../src/controllers/permissionController.php';
+
+$perimsionControll = new permissionController();
+if($perimsionControll->isUserAdmin()){
+    $adminPanel = '<a href="/adminPanel">Admin panel</a>';
+}else{
+    $adminPanel = '';
+}
+
 ?>
 
 <div class="nav_bar">
@@ -18,5 +27,6 @@ require_once __DIR__.'/../../src/models/userImage.php';
         <a href="/creatNewMessage">New message</a>
         <a href="/recivedMessage">Recived message</a>
         <a href="/sendedMessage">Sended message</a>
+        <?= $adminPanel ?>
     </div>
 </div>

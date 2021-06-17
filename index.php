@@ -14,6 +14,7 @@ Router::get('usersList', 'DefaultController');
 Router::get('creatNewMessage', 'DefaultController');
 Router::get('recivedMessage', 'DefaultController');
 Router::get('sendedMessage', 'DefaultController');
+Router::get('adminPanel', 'DefaultController');
 
 Router::get('logout', 'SecurityController');
 Router::post('login', 'SecurityController');

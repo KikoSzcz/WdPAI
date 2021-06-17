@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__.'/../../Database.php';
+require_once __DIR__.'/userGroup.php';
 
 class sendMessage
 {
@@ -36,7 +37,20 @@ class sendMessage
         $emailsNumber = sizeof($emails);
 
         for($i = 0; $i<$emailsNumber; $i++) {
-            $this->saveToDatabase($emails[$i], $id);
+            if(strpos($emails[$i], '@')){
+                $this->saveToDatabase($emails[$i], $id);
+            }
+            else
+            {
+                $dbOperation = new userGroup();
+                $thisGroupUsers = $dbOperation->getThisGroupUsers($emails[$i]);
+                $thisGroupUsers = explode(" ", $thisGroupUsers['EmailList']);
+
+                for($j = 0; $j<sizeof($thisGroupUsers); $j++){
+                    $this->saveToDatabase($thisGroupUsers[$j], $id);
+                }
+            }
+
         }
     }
 

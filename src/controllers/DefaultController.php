@@ -48,4 +48,9 @@ class DefaultController extends AppController {
     {
         $this->render('sendedMessage');
     }
+
+    public function adminPanel()
+    {
+        $this->render('adminPanel');
+    }
 }

@@ -2,6 +2,7 @@
 
 require_once 'src/controllers/DefaultController.php';
 require_once 'src/controllers/SecurityController.php';
+require_once 'src/controllers/permissionController.php';
 
 class Router {
 
@@ -17,12 +18,17 @@ class Router {
 
     public static function run ($url) {
         $sessionControl = new SessionController();
+        $perimsionControll = new permissionController();
 
         //Sprawdzenie czy użytkownik jest zalogowany, jeśli nie to przeniesienie go na stronę logowania
         if(!$sessionControl->checkCookieWithDatabase()){
             $url = "login";
         }elseif ($url === 'login'){
             $url = '';
+        }
+
+        if($url==='adminPanel' and !$perimsionControll->isUserAdmin()){
+            $url = 'errorPage';
         }
 
         $action = explode("/", $url)[0];
