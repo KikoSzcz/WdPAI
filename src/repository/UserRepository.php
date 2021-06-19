@@ -21,7 +21,7 @@ class UserRepository extends Repository
 
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user_details WHERE email = :email
+            SELECT * FROM users JOIN user_details ud on users.id = ud.user_id WHERE email=:email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();

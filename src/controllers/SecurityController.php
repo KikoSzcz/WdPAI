@@ -16,7 +16,7 @@ class SecurityController extends AppController {
         }
 
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
         $user = $userRepository->getUser($email);
 

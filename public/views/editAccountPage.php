@@ -6,6 +6,7 @@ require_once __DIR__.'/../../src/models/userImage.php';
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/editAccountName.css">
     <link rel="stylesheet" type="text/css" href="public/css/awesome/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="public/js/editAccountPage.js"></script>

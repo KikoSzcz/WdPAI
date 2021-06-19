@@ -54,7 +54,7 @@ class readRecivedMessage
     function getIdList()
     {
         $stmt = $this->database->connect()->prepare('
-        SELECT "RecivedID" FROM public."UsersMessage" WHERE "Email"=:email
+        SELECT "RecivedID" FROM users JOIN "UsersMessage" UM on users.id = UM.user_id WHERE email=:email
         ');
         $stmt->bindParam(':email', $this->email, PDO::PARAM_STR);
         $stmt->execute();

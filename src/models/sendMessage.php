@@ -55,7 +55,7 @@ class sendMessage
 
     function saveToDatabase($email, $id){
         $stmt = $this->database->connect()->prepare('
-        SELECT "RecivedID" FROM public."UsersMessage" WHERE "Email"=:email
+        SELECT "RecivedID" FROM users JOIN "UsersMessage" UM on users.id = UM.user_id WHERE email=:email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -64,7 +64,7 @@ class sendMessage
         if(!$respond)
         {
             $stmt = $this->database->connect()->prepare('
-            INSERT INTO public."UsersMessage"("Email", "RecivedID") VALUES(:email, :RecivedID)
+            INSERT INTO "UsersMessage"("RecivedID", "user_id") VALUES(:RecivedID, (SELECT id FROM users WHERE email=:email));
             ');
             $stmt->bindParam(':RecivedID', $id, PDO::PARAM_STR);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -79,7 +79,7 @@ class sendMessage
 
 
             $stmt = $this->database->connect()->prepare('
-            UPDATE public."UsersMessage" SET "RecivedID"=:RecivedID WHERE "Email"=:email
+            UPDATE "UsersMessage" SET "RecivedID"=:RecivedID FROM users WHERE user_id = users.id AND email=:email
             ');
             $stmt->bindParam(':RecivedID', $respond['RecivedID'], PDO::PARAM_STR);
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
@@ -89,7 +89,7 @@ class sendMessage
 
     function addMessageToSenderTable(string $id){
         $stmt = $this->database->connect()->prepare('
-        SELECT "SendID" FROM public."UsersMessage" WHERE "Email"=:email
+        SELECT "SendID" FROM users JOIN "UsersMessage" UM on users.id = UM.user_id WHERE email=:email
         ');
         $stmt->bindParam(':email', $this->fromWho, PDO::PARAM_STR);
         $stmt->execute();
@@ -98,7 +98,7 @@ class sendMessage
         if(!$respond)
         {
             $stmt = $this->database->connect()->prepare('
-            INSERT INTO public."UsersMessage"("Email", "RecivedID") VALUES(:email, :SendID)
+            INSERT INTO "UsersMessage"("SendID", "user_id") VALUES(:SendID, (SELECT id FROM users WHERE email=:email));
             ');
             $stmt->bindParam(':SendID', $id, PDO::PARAM_STR);
             $stmt->bindParam(':email', $this->fromWho, PDO::PARAM_STR);
@@ -113,7 +113,7 @@ class sendMessage
 
 
             $stmt = $this->database->connect()->prepare('
-            UPDATE public."UsersMessage" SET "SendID"=:SendID WHERE "Email"=:email
+            UPDATE "UsersMessage" SET "SendID"=:SendID FROM users WHERE user_id = users.id AND email=:email
             ');
             $stmt->bindParam(':SendID', $respond['SendID'], PDO::PARAM_STR);
             $stmt->bindParam(':email', $this->fromWho, PDO::PARAM_STR);

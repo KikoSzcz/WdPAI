@@ -53,7 +53,7 @@ class readSendedMessage
     function getSendedIdList()
     {
         $stmt = $this->database->connect()->prepare('
-        SELECT "SendID" FROM public."UsersMessage" WHERE "Email"=:email
+        SELECT "SendID" FROM users JOIN "UsersMessage" UM on users.id = UM.user_id WHERE email=:email
         ');
         $stmt->bindParam(':email', $this->email, PDO::PARAM_STR);
         $stmt->execute();

@@ -8,7 +8,7 @@ class deleteMessage
         $database = new Database();
 
         $stmt = $database->connect()->prepare('
-        SELECT "'.$typeOfMessage.'" FROM public."UsersMessage" WHERE "Email"=:email
+        SELECT "'.$typeOfMessage.'" FROM "users" JOIN public."UsersMessage" ON users.id = "UsersMessage".user_id WHERE "email"=:email 
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
@@ -28,7 +28,7 @@ class deleteMessage
             $idString = null;
         }
         $stmt = $database->connect()->prepare('
-        UPDATE public."UsersMessage" SET "'.$typeOfMessage.'"=:newMessageValue WHERE "Email"=:email
+        UPDATE "UsersMessage" SET "'.$typeOfMessage.'"=:newMessageValue FROM users WHERE user_id = users.id AND email=:email
         ');
         $stmt->bindParam(':newMessageValue', $idString, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);

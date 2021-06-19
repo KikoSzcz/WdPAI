@@ -65,7 +65,7 @@ class usersList
     }
 
     public function getUsersInfo(){
-        $stmt = $this->database->connect()->prepare('SELECT * FROM public.user_details');
+        $stmt = $this->database->connect()->prepare('SELECT "email", "image", "name", "surname" FROM users  join "user_details" UM on users.id = UM.user_id');
         $stmt->execute();
         $respond = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $respond;
@@ -80,7 +80,7 @@ class usersList
     }
 
     public function getImageFormDatabase(){
-        $stmt = $this->database->connect()->prepare('SELECT * FROM public.user_details');
+        $stmt = $this->database->connect()->prepare('SELECT "email", "image", "name", "surname" FROM users  join "user_details" UM on users.id = UM.user_id');
         $stmt->execute();
 
         $respond = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -89,7 +89,7 @@ class usersList
 
     public function getDefaultImage(){
         //get default photo
-        $stmt = $this->database->connect()->prepare('SELECT image FROM public.user_details WHERE email=\'defaultUserPhoto\'');
+        $stmt = $this->database->connect()->prepare('SELECT "image", "name", "surname" FROM users JOIN user_details ud on users.id = ud.user_id WHERE email=\'defaultUser\'');
         $stmt->execute();
         $defaultPhoto = $stmt->fetch(PDO::FETCH_ASSOC);
         $defaultPhoto = $defaultPhoto['image'];

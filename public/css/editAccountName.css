@@ -1,0 +1,28 @@
+.container{
+    margin-left: 60px;
+}
+
+.left-account-details{
+    font-weight: bold;
+}
+
+.account-details-container .left-account-details{
+    margin-right: 30px;
+}
+
+.right-account-details img{
+    border-radius: 50%;
+}
+
+.account-details-container p img{
+    width: 150px;
+    height: 150px;
+}
+
+.account-details-container{
+    height: 340px;
+}
+
+.edit-account-buttons input{
+    margin: 10px;
+}

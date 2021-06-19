@@ -13,7 +13,7 @@ class permissionController
 
     public function isUserAdmin(){
         $stmt = $this->database->connect()->prepare(
-          'SELECT "WebsitePremission" FROM public."UsersPremission" WHERE "Email"=:email'
+          'SELECT "WebsitePremission" FROM "users" JOIN public."UsersPremission" ON users.id = "UsersPremission".user_id WHERE "email"=:email'
         );
         $stmt->bindParam(':email', $this->email, PDO::PARAM_STR);
         $stmt->execute();

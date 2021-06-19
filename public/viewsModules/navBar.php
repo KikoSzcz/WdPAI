@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__.'/../../src/models/userImage.php';
 require_once __DIR__.'/../../src/controllers/permissionController.php';
 
@@ -18,6 +19,7 @@ if($perimsionControll->isUserAdmin()){
     <a href="/editAccountPage">
         <div class="user_information_nav_bar">
             <p class="name"><?= json_decode($_COOKIE['user'], true)['name']; ?> <?= json_decode($_COOKIE['user'], true)['surname']; ?></p>
+
             <img src='<?php userImage::getUserImage() ?>'/>
         </div>
     </a>

@@ -1,10 +1,12 @@
 body{
     margin: 0px;
+    background-image: linear-gradient(180deg, #fff, #7a7f87);
 }
 
 /* navigation bar */
 .container{
     margin-top: 67px;
+    min-height: 92vh;
 }
 
 .nav_bar{
@@ -190,4 +192,71 @@ body{
 
 .Your_send_message .sendedMessageContainer .rightSideSendedMessage  .files{
     margin: 0px;
+}
+
+/* Admin panel */
+
+.addNewGroup{
+    float: left;
+    margin: 50px;
+    width: 25%;
+    height: 240px;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.editGroup{
+    float: left;
+    margin: 50px;
+    width: 25%;
+    height: 240px;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.deleteGroup{
+    float: left;
+    margin: 50px;
+    width: 25%;
+    height: 240px;
+    border: 1px solid;
+    padding: 10px;
+}
+
+input[name=addNewName]{
+    width: 98%;
+}
+
+select[name=addNewUsers]{
+    width: 100%;
+    margin-bottom: 26px;
+}
+
+ input[name=editName]{
+     width: 98%;
+ }
+
+select[name=editUsers]{
+    width: 100%;
+    margin-bottom: 26px;
+}
+
+select[name=deleteName]{
+    width: 100%;
+    margin-bottom: 95px;
+}
+
+.addNewGroupTitle{
+    text-align: center;
+    font-weight: bold;
+}
+
+.editGroupTitle{
+    text-align: center;
+    font-weight: bold;
+}
+
+.deleteGroupTitle{
+    text-align: center;
+    font-weight: bold;
 }

@@ -7,7 +7,7 @@ class saveUserInformationInDatabase
 
         $database = new Database();
         $stmt = $database->connect()->prepare('
-        UPDATE public.user_details SET name=:name, surname=:surname WHERE email=:email
+        UPDATE user_details SET name=:name, surname=:surname FROM users WHERE user_id = users.id AND email=:email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
@@ -15,7 +15,7 @@ class saveUserInformationInDatabase
         $stmt->execute();
 
         $stmt = $database->connect()->prepare('
-        UPDATE public.user_details SET image=:image WHERE email=:email
+        UPDATE user_details SET image=:image FROM users WHERE user_id = users.id AND email=:email
         ');
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':image', $image, PDO::PARAM_STR);

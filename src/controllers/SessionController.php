@@ -23,7 +23,7 @@ class SessionController
             ceil(250/strlen($x)) )),1,250);
 
         $stmt = $this->database->connect()->prepare('
-        SELECT * FROM public.user_details WHERE email = :email
+        SELECT "image", "name", "surname" FROM "users" JOIN public."user_details" ON users.id = "user_details".user_id WHERE "email" = :email
         ');
         $stmt->bindParam(':email', $coockie_email, PDO::PARAM_STR);
         $stmt->execute();

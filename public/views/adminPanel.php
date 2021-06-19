@@ -15,7 +15,7 @@ require_once __DIR__.'/../../src/models/adminPanel.php';
 <?php require_once __DIR__.'/../../public/viewsModules/navBar.php'; ?>
 <div class="container">
     <div class="addNewGroup">
-        <p class="addNewGroupTitle">Add new group:</p>
+        <p class="addNewGroupTitle">Add new group</p>
         <p class="addNewDesc">Group name:</p>
         <input name="addNewName"/>
         <p class="addNewDesc">Users:</p>
@@ -26,7 +26,7 @@ require_once __DIR__.'/../../src/models/adminPanel.php';
         <input type="button" name="addNewButton" value="Add" onclick="addNewGroup()" />
     </div>
     <div class="editGroup">
-        <p class="editGroupTitle">Edit group:</p>
+        <p class="editGroupTitle">Edit group</p>
         <p class="editDesc">Group name:</p>
         <select name="editName" onchange="editGroupShowUsers()">
             <option>---</option>
@@ -39,7 +39,7 @@ require_once __DIR__.'/../../src/models/adminPanel.php';
         <input type="button" name="editGroupButton" value="Save" onclick="saveEditedGroup()"/>
     </div>
     <div class="deleteGroup">
-        <p class="deleteGroupTitle">Delete group:</p>
+        <p class="deleteGroupTitle">Delete group</p>
         <p class="deleteDesc">Group name:</p>
         <select name="deleteName">
             <option>---</option>
