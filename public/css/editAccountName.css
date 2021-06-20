@@ -26,3 +26,14 @@
 .edit-account-buttons input{
     margin: 10px;
 }
+
+@media (max-width: 799px){
+    .container{
+        margin-left: 10px;
+    }
+
+    .edit-account-buttons input {
+        margin-left: 35%;
+        width: 30%;
+    }
+}

@@ -199,7 +199,7 @@ body{
 .addNewGroup{
     float: left;
     margin: 50px;
-    width: 25%;
+    width: 23%;
     height: 240px;
     border: 1px solid;
     padding: 10px;
@@ -208,7 +208,7 @@ body{
 .editGroup{
     float: left;
     margin: 50px;
-    width: 25%;
+    width: 23%;
     height: 240px;
     border: 1px solid;
     padding: 10px;
@@ -217,7 +217,7 @@ body{
 .deleteGroup{
     float: left;
     margin: 50px;
-    width: 25%;
+    width: 23%;
     height: 240px;
     border: 1px solid;
     padding: 10px;
@@ -259,4 +259,213 @@ select[name=deleteName]{
 .deleteGroupTitle{
     text-align: center;
     font-weight: bold;
+}
+
+/* login page */
+.login-container .login{
+    border: 1px solid;
+    width: 40%;
+    height: 150px;
+    padding: 20px;
+    margin: auto;
+}
+
+.loginForm input{
+    margin-left: 10%;
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.loginForm button{
+    width: 20%;
+    margin-left: 40%;
+}
+
+.toRegister{
+    width: 100%;
+    text-align: center;
+}
+.editGroup select{
+    width: 100%;
+}
+
+.deleteGroup select{
+    width: 100%;
+}
+
+.login-container .register{
+    border: 1px solid;
+    width: 40%;
+    height: 320px;
+    padding: 20px;
+    margin: auto;
+}
+
+.register input{
+    margin-left: 10%;
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.register button{
+    width: 20%;
+    margin-left: 40%;
+}
+
+.toLogin{
+    width: 100%;
+    text-align: center;
+}
+
+.answer{
+    min-height: 19px;
+    text-align: center;
+}
+
+.navigation_menu_small{
+    display: none;
+}
+
+.dropdownMenu{
+    display: none;
+    background: #7a7f87;
+    width: 111px;
+    padding: 15px;
+    line-height: 2.5;
+}
+
+.navigation_menu_small .fa{
+    font-size: 43px;
+    padding-left: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.navigation_menu_small .fa:visited{
+    color: #000;
+}
+
+@media (max-width: 799px){
+    .login-container .login{
+        width: 310px;
+    }
+
+    .login-container .register{
+        width: 310px;
+    }
+
+    .addNewGroup, .editGroup, .deleteGroup{
+        width: 90%;
+        margin: auto;
+        margin-top: 10%;
+        float: none;
+    }
+
+    .addNewGroup input[type=button], .editGroup input[type=button], .deleteGroup input[type=button]{
+        width: 20%;
+        margin-left: 40%;
+    }
+
+    .users-list .user{
+        width: 310px;
+        margin: auto;
+        float: none;
+    }
+
+    .users-list .user .userListImage{
+        margin-left: 36%;
+    }
+
+    .Your_recived_message .recivedMessageContainer .leftSideRecivedMessage, .Your_send_message .sendedMessageContainer .leftSideSendedMessage{
+        float: none;
+        width: 90%;
+        margin: 5%;
+    }
+
+    .Your_recived_message .recivedMessageContainer .rightSideRecivedMessage, .Your_send_message .sendedMessageContainer .rightSideSendedMessage{
+        width: 90%;
+        margin: 5%;
+        float: none;
+        position: inherit;
+    }
+
+    .navigation_menu{
+        display: none;
+    }
+
+    .navigation_menu_small{
+        display: block;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 999px){
+    .login-container .login{
+        width: 500px;
+    }
+
+    .login-container .register{
+        width: 500px;
+    }
+
+    .addNewGroup, .editGroup, .deleteGroup{
+        width: 90%;
+        margin: auto;
+        margin-top: 10%;
+        float: none;
+    }
+
+    .addNewGroup input[type=button], .editGroup input[type=button], .deleteGroup input[type=button]{
+        width: 20%;
+        margin-left: 40%;
+    }
+
+    .navigation_menu{
+        display: none;
+    }
+
+    .navigation_menu_small{
+        display: block;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px){
+    .login-container .login{
+        width: 550px;
+    }
+
+    .login-container .register{
+        width: 550px;
+    }
+
+    .addNewGroup, .editGroup, .deleteGroup{
+        width: 90%;
+        margin: auto;
+        margin-top: 10%;
+        float: none;
+    }
+
+    .addNewGroup input[type=button], .editGroup input[type=button], .deleteGroup input[type=button]{
+        width: 20%;
+        margin-left: 40%;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px){
+    .login-container .login{
+        width: 600px;
+    }
+
+    .login-container .register{
+        width: 600px;
+    }
+}
+
+@media (min-width: 1401px){
+    .login-container .login{
+        width: 650px;
+    }
+
+    .login-container .register{
+        width: 650px;
+    }
 }

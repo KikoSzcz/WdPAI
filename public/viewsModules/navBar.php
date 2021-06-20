@@ -12,6 +12,8 @@ if($perimsionControll->isUserAdmin()){
 
 ?>
 
+<script src="public/js/navBar.js"></script>
+
 <div class="nav_bar">
     <a class="logout" href="logout">
         <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -30,5 +32,19 @@ if($perimsionControll->isUserAdmin()){
         <a href="/recivedMessage">Recived message</a>
         <a href="/sendedMessage">Sended message</a>
         <?= $adminPanel ?>
+    </div>
+    <div class="navigation_menu_small">
+        <a href="#" onclick="showDropDownMenu()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+
+        <div class="dropdownMenu">
+            <a href="/mainSite">Main site</a><br>
+            <a href="/usersList">Users list</a><br>
+            <a href="/creatNewMessage">New message</a><br>
+            <a href="/recivedMessage">Recived message</a><br>
+            <a href="/sendedMessage">Sended message</a><br>
+            <?= $adminPanel ?>
+        </div>
     </div>
 </div>
