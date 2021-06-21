@@ -345,6 +345,38 @@ select[name=deleteName]{
     color: #000;
 }
 
+.container-new-message{
+    margin-top: 67px;
+    min-height: 92vh;
+}
+
+.new-messge{
+    margin-top: 100px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    padding: 20px;
+}
+
+.new-messge input{
+    width: 100%;
+}
+
+.new-messge textarea{
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.new-messge input[type=file]{
+    padding-bottom: 20px;
+}
+
+.new-messge button{
+    width: 12%;
+    margin-left: 44%;
+}
+
 @media (max-width: 799px){
     .login-container .login{
         width: 310px;
@@ -396,6 +428,11 @@ select[name=deleteName]{
     .navigation_menu_small{
         display: block;
     }
+
+    .new-messge button{
+        width: 40%;
+        margin-left: 30%;
+    }
 }
 
 @media (min-width: 800px) and (max-width: 999px){
@@ -426,6 +463,11 @@ select[name=deleteName]{
     .navigation_menu_small{
         display: block;
     }
+
+    .new-messge button{
+        width: 20%;
+        margin-left: 40%;
+    }
 }
 
 @media (min-width: 1000px) and (max-width: 1200px){
@@ -448,6 +490,11 @@ select[name=deleteName]{
         width: 20%;
         margin-left: 40%;
     }
+
+    .new-messge button{
+        width: 20%;
+        margin-left: 40%;
+    }
 }
 
 @media (min-width: 1201px) and (max-width: 1400px){
@@ -457,6 +504,11 @@ select[name=deleteName]{
 
     .login-container .register{
         width: 600px;
+    }
+
+    .new-messge button{
+        width: 20%;
+        margin-left: 40%;
     }
 }
 

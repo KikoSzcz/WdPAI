@@ -11,17 +11,19 @@
 
 <body>
 <?php require_once __DIR__.'/../../public/viewsModules/navBar.php'; ?>
-<div class="container">
-    MessageSend</br>
-
-    <input name="emailsList" type="text">
-    <input name="title" type="text">
-    <textarea name="messageText"></textarea>
-    <input name="attachments" type="file" multiple>
-    <button type="submit" onclick="sendMessage()">Send message</button>
-    <p class="message"></p>
-    <script>readStateAndPut();</script>
-
-    <a href='<?= $_SERVER['HTTP_REFERER']; ?>'>Back</a>
+<div class="container-new-message">
+    <div class="new-messge">
+        <p>To who:</p>
+        <input name="emailsList" type="text">
+        <p>Title</p>
+        <input name="title" type="text">
+        <p>Message</p>
+        <textarea name="messageText" rows="15"></textarea>
+        <p>Attachments</p>
+        <input name="attachments" type="file" multiple>
+        <button type="submit" onclick="sendMessage()">Send message</button>
+        <p class="message"></p>
+        <script>readStateAndPut();</script>
+    </div>
 </div>
 </body>
